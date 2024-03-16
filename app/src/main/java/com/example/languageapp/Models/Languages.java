@@ -3,39 +3,38 @@ package com.example.languageapp.Models;
 public class Languages {
 
     private String no;
-    private String langage;
-    private String countyry;
+    private String language;
+    private String country;
 
 
     public Languages(){
 
     }
 
-    public Languages(String no, String langage, String countyry){
+    public Languages(String no, String language, String country){
         this.no = no;
-        this.langage = langage;
-        this.countyry = countyry;
-
+        this.language = language;
+        this.country = country;
     }
     public void setNo(String no){
         this.no = no;
     }
 
-    public void setLangage(String langage){
-        this.langage = langage;
+    public void setLanguage(String language){
+        this.language = language;
     }
-    public void setCountyry(String no){
-        this.countyry = countyry;
+    public void setCountry(String no){
+        this.country = country;
     }
 
     public String getNo(){
         return no;
     }
-    public String getLangage(){
-        return langage;
+    public String getLanguage(){
+        return language;
     }
 
-    public String getCountyry(){
-        return countyry;
+    public String getCountry(){
+        return country;
     }
 }

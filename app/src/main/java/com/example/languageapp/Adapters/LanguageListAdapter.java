@@ -22,21 +22,7 @@ private final Context context;
 public LanguageListAdapter(ArrayList<Languages> languageList, Context context){
     this.languageList = languageList;
     this.context = context;
-
 }
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView keyText, languageText, countryText;
-
-        public ViewHolder(@NonNull View itemView){
-            super(itemView);
-
-            keyText = itemView.findViewById(R.id.keyTextView);
-            languageText = itemView.findViewById(R.id.languageTextView);
-            countryText = itemView.findViewById(R.id.countryTextView);
-
-        }
-    }
-
     @NonNull
     @Override
 
@@ -44,7 +30,6 @@ public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
 
     View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.language_card, parent, false);
     return new ViewHolder(view);
-
     }
 
     @Override
@@ -52,9 +37,8 @@ public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
 
     Languages langModel = languageList.get(position);
     holder.keyText.setText(langModel.getNo());
-    holder.languageText.setText(langModel.getLangage());
-    holder.countryText.setText(langModel.getCountyry());
-
+    holder.countryText.setText(langModel.getCountry());
+    holder.languageText.setText(langModel.getLanguage());
     }
 
     @Override
@@ -62,4 +46,15 @@ public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
     return languageList.size();
     }
 
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView keyText, languageText, countryText;
+
+        public ViewHolder(@NonNull View itemView){
+            super(itemView);
+
+            keyText = itemView.findViewById(R.id.keyTextView);
+            countryText = itemView.findViewById(R.id.countryTextView);
+            languageText = itemView.findViewById(R.id.languageTextView);
+        }
+    }
 }
