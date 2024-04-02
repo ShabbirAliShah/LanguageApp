@@ -1,4 +1,4 @@
-package com.example.languageapp;
+package com.example.languageapp.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.languageapp.Fragments.HomeFragment;
+import com.example.languageapp.R;
 import com.example.languageapp.databinding.ActivityMainBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -52,5 +53,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+
     }
 }

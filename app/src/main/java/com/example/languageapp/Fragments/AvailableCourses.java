@@ -1,6 +1,6 @@
 package com.example.languageapp.Fragments;
 
-import android.os.Bundle;
+          import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,17 +20,20 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends  Fragment {
+public class AvailableCourses extends Fragment {
 
-    public HomeFragment(){
+    public AvailableCourses() {
 
     }
 
     private LanguageListAdapter langAdapter;
     private final ArrayList<Languages> languageList = new ArrayList<>();
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
     }
 
@@ -39,8 +42,7 @@ public class HomeFragment extends  Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_available_courses, container, false);
         recyclerView.findViewById(R.id.langList);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
 
@@ -51,9 +53,9 @@ public class HomeFragment extends  Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 languageList.clear();
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     String key = snapshot.getKey();
-                    Languages languages = snapshot.getValue(Languages.class);
+                    Languages languages = dataSnapshot.getValue(Languages.class);
                     languageList.add(languages);
                 }
 
