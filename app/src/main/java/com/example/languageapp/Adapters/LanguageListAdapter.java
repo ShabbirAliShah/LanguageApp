@@ -16,18 +16,18 @@ import java.util.ArrayList;
 
 public class LanguageListAdapter extends RecyclerView.Adapter<LanguageListAdapter.ViewHolder> {
 
-private final ArrayList<Languages> languageList;
+private ArrayList<Languages> languageList;
 private final Context context;
 
 public LanguageListAdapter(ArrayList<Languages> languageList, Context context){
     this.languageList = languageList;
     this.context = context;
+
 }
     @NonNull
     @Override
 
 public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
-
     View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.language_card, parent, false);
     return new ViewHolder(view);
     }

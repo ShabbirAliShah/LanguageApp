@@ -6,7 +6,6 @@ public class Languages {
     private String language;
     private String country;
 
-
     public Languages(){
 
     }

@@ -22,12 +22,12 @@ import java.util.ArrayList;
 
 public class HomeFragment extends  Fragment {
 
+    private LanguageListAdapter langAdapter;
+    private ArrayList<Languages> languageList = new ArrayList<>();
+
     public HomeFragment(){
 
     }
-
-    private LanguageListAdapter langAdapter;
-    private final ArrayList<Languages> languageList = new ArrayList<>();
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +41,7 @@ public class HomeFragment extends  Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerView.findViewById(R.id.langList);
+        recyclerView = view.findViewById(R.id.langList);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
 
         langAdapter = new LanguageListAdapter(languageList, getContext());
@@ -52,13 +52,13 @@ public class HomeFragment extends  Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 languageList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    String key = snapshot.getKey();
-                    Languages languages = snapshot.getValue(Languages.class);
+                    //String key = snapshot.getKey();
+                    Languages languages = dataSnapshot.getValue(Languages.class);
                     languageList.add(languages);
                 }
 
-                langAdapter = new LanguageListAdapter(languageList, getContext());
-                recyclerView.setAdapter(langAdapter);
+//                langAdapter = new LanguageListAdapter(languageList, getContext());
+//                recyclerView.setAdapter(langAdapter);
             }
 
             @Override

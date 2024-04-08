@@ -26,9 +26,9 @@ public class AvailableCoureseAdapter extends RecyclerView.Adapter<AvailableCoure
 
     @NonNull
     @Override
-    public AvailableCoureseAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.languageList_card, parent, false);
-        return new AvailableCoureseAdapter.ViewHolder(view);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.languagelist_card, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class AvailableCoureseAdapter extends RecyclerView.Adapter<AvailableCoure
         public ViewHolder(@NonNull View ItemView) {
             super(ItemView);
 
-            languageText = itemView.findViewById(R.id.languageTextView);
+            languageText = itemView.findViewById(R.id.languageView);
         }
     }
 }
